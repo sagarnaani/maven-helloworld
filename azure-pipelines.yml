@@ -25,6 +25,9 @@ steps:
     CopyRoot: '/home/vsts/work/1/a'
     ArtifactName: 'drop'
     ArtifactType: 'Container'
+- task: CopyFiles@2
+  inputs:
+    TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
